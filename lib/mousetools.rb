@@ -56,7 +56,7 @@ class Mousetools
     end
   
     def post_mouse_event(x, y, event_type, mouse_button, modifier_key_1 = nil, modifier_key_2 = nil)
-      raise "Must provide inital x and y coordinates" if (x.nil? || y.nil?) && @current_coordinates.nil?
+      raise "Must provide initial x and y coordinates" if (x.nil? || y.nil?) && @current_coordinates.nil?
       # Create the event
       set_current_coordinates(x, y) unless x.nil? || y.nil?
       event = CGEventCreateMouseEvent(nil, event_type, @current_coordinates, mouse_button)
